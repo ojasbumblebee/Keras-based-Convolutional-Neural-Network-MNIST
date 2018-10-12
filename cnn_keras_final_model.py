@@ -4,6 +4,8 @@ Training done on MX150 GPU
 '''
 
 from __future__ import print_function
+import numpy as np
+import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -21,7 +23,6 @@ from keras import optimizers
 #batch_size = 32
 num_classes = 10
 epochs = 5
-
 # input image dimensions
 img_rows, img_cols = 28, 28
 
@@ -96,13 +97,29 @@ history = model.fit(x_train, y_train,
             validation_data=(x_test, y_test))
 
 score = model.evaluate(x_test, y_test, verbose=0)
+
+#generate predictions on test data for submission
+predictions = model.predict_classes(x_test, verbose=0)
+
+
+# Generate csv file
+l=len(predictions)
+final_out = np.zeros((l, 10))
+final_out[np.arange(l), predictions] = 1
+pred=pd.DataFrame(final_out)
+pred=pred.astype(int)
+pred.to_csv("mnist.csv", index=False)
+
+
+print (score)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
 
 output_log ='\n Final Log For combination of with activation as '+activation+' batch size:'+str(batch_size)+'learning rate:'+str(learning_rate)+'\n'+\
             'Test loss:' + str(score[0]) +'\n'+'Test accuracy:'+str(score[1]) 
 
-log_output_for_current_hyperparameter_combination(output_log)
+print(output_log)
+#log_output_for_current_hyperparameter_combination(output_log)
 
 # Plot training & validation accuracy values
 fig1 = plt.figure(count_1)

@@ -49,18 +49,23 @@ Test accuracy:0.8476
 For combination of with activation as relu batch size:32learning rate:0.01
 Test loss:0.04064263557969243
 Test accuracy:0.9869
+
 For combination of with activation as sigmoid batch size:32learning rate:0.01
 Test loss:2.301334253311157
 Test accuracy:0.1135
+
 For combination of with activation as tanh batch size:32learning rate:0.01
 Test loss:0.036700090780953175
 Test accuracy:0.9883
+
 For combination of with activation as relu batch size:128learning rate:0.0001
 Test loss:0.9935655162811279
 Test accuracy:0.8153
+
 For combination of with activation as sigmoid batch size:128learning rate:0.0001
 Test loss:2.3011730094909666
 Test accuracy:0.1135
- Final Log For combination of with activation as tanh batch size:32learning rate:0.01
+
+Final Log For combination of with activation as tanh batch size:32learning rate:0.01
 Test loss:0.04035723799202824
 Test accuracy:0.9872
