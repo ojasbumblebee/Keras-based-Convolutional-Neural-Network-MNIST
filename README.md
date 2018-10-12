@@ -42,7 +42,7 @@ For the grid search outputs and different hyperparameter set outputs check [outp
 
 
 
-#Justification of hyper- parameters:
+Justification of hyper- parameters:
 ---
 
 The Network was evaluated for three hyper parameters namely learning rate, batch size and activation functions at hidden layers. A grid search was performed on batch size and learning rate as the two input hyper parameters. We tested for the permutations of the following namely learning rate as 0.1, 0.01, 0.001, 0.0001, 0.00001 and batch size as 32, 64, 128. After running our grid search algorithm we reached the conclusion that the network gave the best outputs for the batch size of 32 and learning rate of 0.01 for Relu activation functions. Next up we tested the network using the previously obtained values of hyper parameters namely learning rate - 0.01 and batch size 32 on different activation functions. We tried 3 different activation functions namely Relu, Sigmoid and Tanh. We obtained the best test results for the Tanh activation function. We conclude that the results obtained on the said hyperparameters were better than other permutations that we experimented as the Tanh activation has a steeper learning rate than Relu and converges faster in our scenario as we used only 5 epochs to train our network and also the learning rate being used i.e. 0.01 is on the higher side. Also due to a smaller size of the network i.e. the network being comparitively shallow we did not observe any problem of exploding gradients with Tanh as an activation function. We can obtain a better performance with Relu as an activation by increasing the number of epochs as it will take more time to converge to optimal values as it introduces sparsity into the model as ca be seen by below output. 
