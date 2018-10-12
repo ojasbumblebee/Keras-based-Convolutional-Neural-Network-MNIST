@@ -3,6 +3,8 @@
 
 All the training was performed on Nvidia- MX150 GPU
 
+The data set was divided into 50,000 training, 10,000 validation and 10,000 testing images 
+
 The repository contains codes:
 
 
@@ -35,4 +37,5 @@ python cnn_keras_final_model.py
 ```
 
 
+For the grid search outputs and different hyperparameter set outputs check [output graphs folder](https://github.ncsu.edu/ovbarve/Keras-based-Convolutional-Neural-Network-MNIST/tree/master/Output_graphs).
 
